@@ -3,6 +3,10 @@ from os.path import dirname, abspath
 
 from .utils import set_session_var
 
+import matplotlib
+
+matplotlib.use('agg')
+
 def get_save_path():
     """
     """
