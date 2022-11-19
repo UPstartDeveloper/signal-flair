@@ -27,7 +27,7 @@ def post_load_file():
         set_session_var('error', "Le fichier n'est pas valide.")
         return redirect(url_for("get_load_file"))
 
-    # 2. load data
+    # 2. load the file into a pd.DataFrame
     try:
         data = retrieve_dataset_from_file(fpath)
     except Exception as exception:
