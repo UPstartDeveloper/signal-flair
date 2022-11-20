@@ -29,6 +29,18 @@ def retrieve_dataset_from_file(fpath, nrows=None):
         raise ValueError("L'extension n'est pas valide")
 
 
+def retrieve_dataset_from_upload(storage):
+    """
+    """
+    fpath = storage.filename
+    ext = get_file_extension(fpath)
+
+    if ext == 'csv':
+        return pd.read_csv(storage.stream)
+    else:
+        raise ValueError("L'extension n'est pas valide")
+
+
 def check_file_is_readable(fpath):
     """
     """

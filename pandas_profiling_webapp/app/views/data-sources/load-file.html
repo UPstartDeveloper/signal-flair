@@ -10,15 +10,14 @@
         <h2 class="mb-5">Charger depuis un fichier CSV ou Excel</h2>
         <hr />
 
-        <form action="/load-file" method="POST">
-          <div class="form-group row">
-            <div class="col-sm-8">
-              <!-- TODO: if/when uploading to S3 works, we can use type='file' below! -->
+        <form action="/load-file" method="POST" enctype="multipart/form-data">
+          <div class="form-group">
+            <div class="col-sm-5">
               <input
                 class="form-control"
-                type="text"
-                name="file-path"
-                id="file-path"
+                type="file"
+                name="file-upload"
+                id="file-upload"
                 required
               />
             </div>
