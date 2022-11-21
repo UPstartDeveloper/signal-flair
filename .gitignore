@@ -1,36 +1,10 @@
+# OS and Editor
+.vscode
+.DS_Store
 
-Skip to content
-Pull requests
-Issues
-Marketplace
-Explore
-@Nathanlauga
-Nathanlauga /
-transparentai-ui
+# Generated Reports
+pandas_profiling_webapp/app/views/reports/*.html
 
-1
-1
-
-    0
-
-Code
-Issues
-Pull requests
-Actions
-Projects 1
-Wiki
-Security
-Insights
-
-    Settings
-
-transparentai-ui/.gitignore
-@Nathanlauga
-Nathanlauga Add: init babel translation and load csv
-Latest commit d79aa95 5 days ago
-History
-1 contributor
-137 lines (110 sloc) 1.87 KB
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
