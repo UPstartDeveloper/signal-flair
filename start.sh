@@ -1,3 +1,5 @@
+#!/bin/bash
+
 cd pandas_profiling_webapp
 
 export FLASK_APP=run.py
