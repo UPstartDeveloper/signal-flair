@@ -1,7 +1,7 @@
-# Pandas Profiling Flask 
+# Signal Flair
 ---------
 
-"Generate a pandas profiling report from a Flask web app."
+"Generate a Pandas-style profiling report from a Flask web app."
 
 ## Environment Set-up
 Pre-requisite: Python 3
