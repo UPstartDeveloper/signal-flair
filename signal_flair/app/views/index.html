@@ -1,0 +1,23 @@
+{% from 'commons/head.html' import head %}
+{% from 'commons/svg-button.html' import svg_button %}
+
+<html>
+  <head>
+    {{ head(title='Signal Flair') }}
+  </head>
+  <body>
+    {% include 'commons/header.html' %}
+    <div class="vertical-center">
+      <div class="container">
+        <h1 class="row mb-5">Choose a Data Source:</h1>
+        <div class="row text-center">
+          <div class="col">
+            {{ svg_button(svg_path='img/spreadsheet.svg', text='Spreadsheets (.csv)', href='/load-file') }}
+          </div>
+        </div>
+
+        {% include 'commons/messages.html' %}
+      </div>
+    </div>
+  </body>
+</html>

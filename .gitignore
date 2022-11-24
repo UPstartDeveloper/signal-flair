@@ -3,7 +3,7 @@
 .DS_Store
 
 # Generated Reports
-pandas_profiling_webapp/app/views/reports/*.html
+signal_flair/app/views/reports/*.html
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

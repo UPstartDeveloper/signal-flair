@@ -1,4 +1,6 @@
-cd pandas_profiling_webapp
+#!/bin/bash
+
+cd signal_flair
 
 export FLASK_APP=run.py
 export FLASK_DEBUG=true  # DO NOT use true in production!!

@@ -1,0 +1,8 @@
+
+<div style="text-align: center;">
+<a href='/reports'><button>See All Reports</button></a>
+<a href="/show-report?name={{name}}" download={{name}}><button>Download Report</button></a>
+</div>
+{% if name is defined %}
+{% include 'reports/'+name %}
+{% endif %}
