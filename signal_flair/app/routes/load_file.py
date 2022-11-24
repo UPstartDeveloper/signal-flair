@@ -1,5 +1,4 @@
 from flask import render_template, session, request, redirect, url_for
-import pandas as pd
 
 from ..utils import set_session_var, check_session_var
 from ..utils import get_file_extension, retrieve_dataset_from_upload
@@ -36,8 +35,12 @@ def post_load_file():
         return redirect(url_for("get_load_file"))
 
     # 3. Generate pandas-profiling report
-    fpath = fpath.replace("\\", "/")
-    title = fpath.split("/")[-1].split(".")[-2]
+    fpath, title = fpath.replace("\\", "/"), ""
+    input_title = request.form["report-title"]
+    if not input_title:
+        title = fpath.split("/")[-1].split(".")[-2]
+    else:
+        title = request.form["report-title"]
     generate_pandas_prof_report(data, title)
 
     return redirect(url_for("reports", name=title + ".html"))

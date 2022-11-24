@@ -1,11 +1,7 @@
 from pandas_profiling import ProfileReport
 from os.path import dirname, abspath
 
-from .utils import set_session_var
-
 import matplotlib
-
-matplotlib.use("agg")
 
 
 def get_save_path():
@@ -15,6 +11,7 @@ def get_save_path():
 
 def generate_pandas_prof_report(df, title):
     """ """
+    matplotlib.use("agg")
     profile = ProfileReport(df, title=title, explorative=False)
 
     output_path = get_save_path()
