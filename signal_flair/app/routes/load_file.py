@@ -24,14 +24,14 @@ def post_load_file():
     valid_ext = ["csv", "xlsx", "xls"]
 
     if ext not in valid_ext:
-        set_session_var("error", "Le fichier n'est pas valide.")
+        set_session_var("error", "Sorry, file must be a CSV or Excel spreadsheet.")
         return redirect(url_for("get_load_file"))
 
     # 2. load the file into a pd.DataFrame
     try:
         data = retrieve_dataset_from_upload(storage)
     except Exception as _:  # most likely will be a TypeError
-        set_session_var("error", "Impossible de lire le fichier.")
+        set_session_var("error", "Sorry, an unexpected error occurred.")
         return redirect(url_for("get_load_file"))
 
     # 3. Generate pandas-profiling report

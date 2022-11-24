@@ -1,20 +1,20 @@
 {% from 'commons/head.html' import head %}
 <html>
   <head>
-    {{ head(title='Pandas profiling Webapp') }}
+    {{ head(title='Signal Flair') }}
   </head>
   <body>
     {% include 'commons/header.html' %}
     <div class="vertical-center">
       <div class="container">
-        <h2 class="mb-5">Charger depuis un fichier CSV ou Excel</h2>
+        <h2 class="mb-5">Please Upload a CSV or Excel Spreadsheet:</h2>
         <hr />
 
         <form action="/load-file" method="POST" enctype="multipart/form-data">
           <div class="form-group">
             <div class="row">
               <label for="file-path" class="col-sm-4 col-form-label">
-                Enter a title for your report (leave blank to reuse the title of the CSV):
+                Enter a title for your report:
               </label>
             </div>
             <div class="row">
@@ -24,6 +24,7 @@
                   type="text"
                   name="report-title"
                   id="report-title"
+                  required
                 />
               </div>
             </div>
@@ -42,7 +43,7 @@
           <input 
             onclick="show_load();"
             type="submit" 
-            value="Charger le fichier" 
+            value="Upload file" 
             class="btn btn-secondary mb-2"
           />
         </form>

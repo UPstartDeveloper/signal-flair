@@ -25,7 +25,7 @@ def retrieve_dataset_from_file(fpath, nrows=None):
     elif ext in ["xls", "xlsx"]:
         return pd.read_excel(fpath, nrows=nrows)
     else:
-        raise ValueError("L'extension n'est pas valide")
+        raise ValueError("Extension must be either a .csv, .xls, or .xlsx.")
 
 
 def retrieve_dataset_from_upload(storage):
@@ -36,7 +36,7 @@ def retrieve_dataset_from_upload(storage):
     if ext == "csv":
         return pd.read_csv(storage.stream)
     else:
-        raise ValueError("L'extension n'est pas valide")
+        raise ValueError("Please upload a .csv file.")
 
 
 def check_file_is_readable(fpath):
