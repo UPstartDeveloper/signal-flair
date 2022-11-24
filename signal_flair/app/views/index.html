@@ -3,18 +3,16 @@
 
 <html>
   <head>
-    {{ head(title='Pandas profiling Webapp') }}
+    {{ head(title='Signal Flair') }}
   </head>
   <body>
     {% include 'commons/header.html' %}
     <div class="vertical-center">
       <div class="container">
+        <h1 class="row mb-5">Choose a Data Source:</h1>
         <div class="row text-center">
           <div class="col">
             {{ svg_button(svg_path='img/spreadsheet.svg', text='Charger depuis un fichier', href='/load-file') }}
-          </div>
-          <div class="col">
-            {{ svg_button(svg_path='img/database.svg', text='Charger depuis Oracle', href='/connect-oracle') }}
           </div>
         </div>
 
