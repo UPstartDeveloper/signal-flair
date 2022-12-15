@@ -9,7 +9,7 @@ from os.path import isfile, join
 
 
 def reports_list():
-    '''Controller function to list all past reports.'''
+    """Controller function to list all past reports."""
     utils.check_session_var("error")
     path = reports.get_save_path()
     data = request.args
@@ -36,7 +36,7 @@ def reports_list():
 
 
 def show_report():
-    '''Controller function to render a particular report.'''
+    """Controller function to render a particular report."""
     path = reports.get_save_path()
     data = request.args
     files = [f for f in listdir(path) if isfile(join(path, f))]
