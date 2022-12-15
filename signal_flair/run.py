@@ -2,9 +2,7 @@ from .app import app
 
 
 def main():
-    """Run the transparentai-ui program that launch a
-    Flask Webapp
-    """
+    """Launches a Flask web app."""
     app.run()
 
 

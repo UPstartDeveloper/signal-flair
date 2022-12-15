@@ -1,9 +1,10 @@
-from flask import render_template, session, request
+from flask import render_template, session
 
-from ..utils import check_session_var, get_save_path
+from ..utils import utils
 
 
-def index():
-    check_session_var("error")
+def home():
+    '''Controller function for the home page route!'''
+    utils.check_session_var("error")
 
     return render_template("index.html", session=session)
