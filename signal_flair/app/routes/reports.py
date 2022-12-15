@@ -1,6 +1,6 @@
 from flask import render_template, session, request
 
-from ..utils import check_session_var, get_save_path
+from ..utils import reports, utils
 
 from datetime import datetime
 import os
@@ -8,9 +8,10 @@ from os import listdir
 from os.path import isfile, join
 
 
-def reports():
-    check_session_var("error")
-    path = get_save_path()
+def reports_list():
+    """Controller function to list all past reports."""
+    utils.check_session_var("error")
+    path = reports.get_save_path()
     data = request.args
 
     files_names = [f for f in listdir(path) if isfile(join(path, f))]
@@ -21,7 +22,7 @@ def reports():
         files.append(
             {
                 "path": f,
-                "last_update": datetime.fromtimestamp(st.st_mtime).strftime("%d/%m/%Y"),
+                "last_update": datetime.fromtimestamp(st.st_mtime).strftime("%m/%d/%Y"),
             }
         )
 
@@ -35,7 +36,8 @@ def reports():
 
 
 def show_report():
-    path = get_save_path()
+    """Controller function to render a particular report."""
+    path = reports.get_save_path()
     data = request.args
     files = [f for f in listdir(path) if isfile(join(path, f))]
 
