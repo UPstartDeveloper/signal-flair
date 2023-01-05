@@ -8,7 +8,7 @@ from pandas_profiling import ProfileReport
 
 
 # allows us to parse English strings representing numbers
-locale.setlocale(locale.LC_ALL, 'en_US.UTF-8' )
+locale.setlocale(locale.LC_ALL, 'en_US' )
 # non-interactive backend, so we don't crash the browser
 matplotlib.use("agg")
 
