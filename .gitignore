@@ -4,6 +4,8 @@
 
 # Generated Reports
 signal_flair/app/views/reports/*.html
+!signal_flair/app/views/reports/Example_EDA_Report.html
+# !signal_flair/app/views/reports/Example_Outlier_Detection_Report.html
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
