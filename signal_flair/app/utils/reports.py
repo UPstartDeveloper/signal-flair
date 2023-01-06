@@ -1,5 +1,5 @@
+import decimal
 from os.path import dirname, abspath
-import locale
 
 import matplotlib
 import numpy as np
@@ -7,8 +7,6 @@ import pandas as pd
 from pandas_profiling import ProfileReport
 
 
-# allows us to parse English strings representing numbers
-locale.setlocale(locale.LC_ALL, 'en_US' )
 # non-interactive backend, so we don't crash the browser
 matplotlib.use("agg")
 
@@ -55,12 +53,13 @@ def generate_pandas_prof_report(
     title = parse_report_title(report_config["report-title"], fpath)
 
     column_to_analyze = report_config["column-to-analyze"]
-    # prevent errors in parsing number strs with commas
+    # prevent errors in parsing strings that represent numbers with commas
     if df[column_to_analyze].dtype == np.dtype("object"):
         df = df.assign(
             column_to_analyze=df[column_to_analyze]\
-                .apply(lambda duration_str: locale.atoi(duration_str))
-        )
+                .apply(
+                lambda duration_str: float(decimal.Decimal(duration_str.replace(",","")))
+        ))
 
     # make the report
     output_path = get_save_path()
