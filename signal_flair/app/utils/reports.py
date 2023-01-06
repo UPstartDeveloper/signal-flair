@@ -56,10 +56,12 @@ def generate_pandas_prof_report(
     # prevent errors in parsing strings that represent numbers with commas
     if df[column_to_analyze].dtype == np.dtype("object"):
         df = df.assign(
-            column_to_analyze=df[column_to_analyze]\
-                .apply(
-                lambda duration_str: float(decimal.Decimal(duration_str.replace(",","")))
-        ))
+            column_to_analyze=df[column_to_analyze].apply(
+                lambda duration_str: float(
+                    decimal.Decimal(duration_str.replace(",", ""))
+                )
+            )
+        )
 
     # make the report
     output_path = get_save_path()
